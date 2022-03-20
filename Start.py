@@ -39,14 +39,14 @@ def run_game():
 
     # Запуск основного цикла игры.
     while True:
-        gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
+        gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets)
 
         if stats.game_active:
             screen.fill(ai_settings.bg_color)
             ship.update()
             ship.blitme()
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
-            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+            gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets)
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
         
         # Отображение последнего прорисованного экрана.
