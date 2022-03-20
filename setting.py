@@ -25,7 +25,7 @@ class Settings():
         self.fleet_direction = 1
 
         # Темп ускорения игры
-        self.speedup_scale = 1.1
+        self.speedup_scale = 1.5
         # Темп роста стоимости пришельцев
         self.score_scale = 1.5
         self.initialize_dynamic_settings()

@@ -65,22 +65,29 @@ def fire_bullet(ai_settings, screen, ship, bullets):
 
 #Реагирует на нажатие клавиши.
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
-    if event.key == pygame.K_RIGHT:
+    if event.key == pygame.K_d:
         ship.moving_right = True
-    elif event.key == pygame.K_LEFT:
+    elif event.key == pygame.K_a:
         ship.moving_left = True
-    elif event.key == pygame.K_SPACE:
+    elif event.key == pygame.K_w:
+        ship.moving_down = True
+    elif event.key == pygame.K_s:
+        ship.moving_up = True
+    elif event.key == pygame.K_e:
         fire_bullet(ai_settings, screen, ship, bullets)
     elif event.key == pygame.K_q:
         sys.exit()
 
 # реагирует на отпуск клавишши.
 def check_keyup_events(event, ship):
-    if event.key == pygame.K_RIGHT:
+    if event.key == pygame.K_d:
         ship.moving_right = False
-    elif event.key == pygame.K_LEFT:
+    elif event.key == pygame.K_a:
         ship.moving_left = False
-
+    elif event.key == pygame.K_w:
+        ship.moving_down = False
+    elif event.key == pygame.K_s:
+        ship.moving_up = False
 def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

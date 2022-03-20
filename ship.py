@@ -14,12 +14,17 @@ class Ship(Sprite):
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
+
         # Сoхранение вещественной координаты центра корабля.
         self.center = float(self.rect.centerx)
+        self.centerr = float(self.rect.centery)
+
 
         # Флаг перемещения.
         self.moving_right = False
         self.moving_left = False
+        self.moving_up = False
+        self.moving_down = False
     
     # Обновляет позиции корабля с учетом флага.
     def update(self):
@@ -27,9 +32,15 @@ class Ship(Sprite):
             self.center += self.ai_settings.ship_speed_factor
         if self.moving_left and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
+        if self.moving_up and self.rect.top < self.screen_rect.bottom:
+            self.centerr += self.ai_settings.ship_speed_factor
+        if self.moving_down and self.rect.bottom > 0:
+            self.centerr -= self.ai_settings.ship_speed_factor
         
         # Обновление атрибута rect на основании self.center.
         self.rect.centerx = self.center
+        self.rect.centery = self.centerr
+
     
     def blitme(self):
         self.screen.blit(self.image, self.rect)
