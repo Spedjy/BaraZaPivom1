@@ -63,7 +63,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
 
-# Реагирует на нажатие клавиши.
+#Реагирует на нажатие клавиши.
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True

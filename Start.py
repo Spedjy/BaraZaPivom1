@@ -4,7 +4,7 @@ import pygame
 from turtle import Screen
 from setting import Settings
 from game_stats import GameStats
-from scoreboard import  Scoreboard
+from scoreboard import Scoreboard
 from button import Button
 from ship import Ship
 

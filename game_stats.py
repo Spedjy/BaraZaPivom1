@@ -7,7 +7,7 @@ class GameStats():
         self.ai_settings = ai_settings
         self.reset_stats()
 
-        # Игра запускается в неактивном состоянии
+        # Игра зaпускается в неактивном состоянии
         self.game_active = False
 
         # Рекорд не должен сбрасываться

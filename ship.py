@@ -14,7 +14,7 @@ class Ship(Sprite):
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
-        # Сохранение вещественной координаты центра корабля.
+        # Сoхранение вещественной координаты центра корабля.
         self.center = float(self.rect.centerx)
 
         # Флаг перемещения.
