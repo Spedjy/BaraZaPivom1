@@ -7,7 +7,7 @@ class Ship(Sprite):
         self.screen = screen
         self.ai_settings = ai_settings
         # Загрузка изображения корабля и получение прямоугольника.
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/ship.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         # Каждый новый корабль появляется у нижнего края экрана.
@@ -32,9 +32,9 @@ class Ship(Sprite):
             self.center += self.ai_settings.ship_speed_factor
         if self.moving_left and self.rect.left > 0:
             self.center -= self.ai_settings.ship_speed_factor
-        if self.moving_up and self.rect.top < self.screen_rect.bottom:
+        if self.moving_up and self.rect.bottom < self.screen_rect.bottom:
             self.centerr += self.ai_settings.ship_speed_factor
-        if self.moving_down and self.rect.bottom > 0:
+        if self.moving_down and self.rect.top > 0:
             self.centerr -= self.ai_settings.ship_speed_factor
         
         # Обновление атрибута rect на основании self.center.
